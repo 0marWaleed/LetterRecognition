@@ -15,7 +15,7 @@ A machine learning project to classify handwritten capital letters (A–Z) based
 ## 🧪 Project Workflow
 
 1. **Preprocessing**
-   - Convert data from `.data` to structured format using Pandas
+   - Convert data from `.csv` to structured format using Pandas
    - Normalize/scale features
    - Encode target labels (A–Z)
    - Split into training/testing sets
@@ -29,7 +29,6 @@ A machine learning project to classify handwritten capital letters (A–Z) based
      - `Streamlit` for quick interactive demos
      - `Flask` for web deployment
      - `Tkinter` for local desktop GUI
-
 ---
 
 ## 🚀 Getting Started
@@ -38,7 +37,6 @@ A machine learning project to classify handwritten capital letters (A–Z) based
 
 ```bash
 git clone https://github.com/0marWaleed/LetterRecognition.git
-cd LetterRecognition
 ```
 
 ### 2. Install Dependencies
@@ -46,7 +44,7 @@ cd LetterRecognition
 If not using a `requirements.txt`, install manually:
 
 ```bash
-pip install pandas numpy scikit-learn streamlit flask
+pip install pandas numpy scikit-learn tensorflow streamlit flask
 ```
 
 ---
@@ -56,20 +54,20 @@ pip install pandas numpy scikit-learn streamlit flask
 ### ▶️ Streamlit App
 
 ```bash
-streamlit run app.py
+streamlit run streamlit_app.py
 ```
 
 ### 🌐 Flask App
 
 ```bash
-python app.py
+python flask_app.py
 ```
 Then visit: `http://127.0.0.1:5000`
 
 ### 🪟 Tkinter App
 
 ```bash
-python app.py
+python tkinter_app.py
 ```
 
 ---
