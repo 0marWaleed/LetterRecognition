@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Letter Recognition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      padding: 20px;
+      width: 85%;
+      max-width: 1100px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    .header {
+      grid-column: span 2;
+      text-align: center;
+      font-size: 26px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 5px;
+    }
+    .feature {
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+    }
+    .feature label {
+      margin-bottom: 4px;
+      color: #555;
+    }
+    .feature select {
+      padding: 5px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .actions {
+      grid-column: span 2;
+      text-align: center;
+      margin-top: 5px;
+    }
+    .actions button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #42a5f5;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .actions button:hover {
+      background-color: #1e88e5;
+    }
+    .result {
+      grid-column: span 2;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #2e7d32;
+    }
+  </style>
+</head>
+<body>
+
+<form method="POST" class="container">
+  <div class="header">🔠 Letter Recognition (SVM Classifier)</div>
+
+  {% for display, key in features %}
+    <div class="feature">
+      <label for="{{ key }}">{{ display }}</label>
+      <select id="{{ key }}" name="{{ key }}">
+        {% for i in range(16) %}
+          <option value="{{ i }}" {% if i == 7 %}selected{% endif %}>{{ i }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  {% endfor %}
+
+  <div class="actions">
+    <button type="submit">Predict Letter</button>
+  </div>
+
+  {% if prediction %}
+    <div class="result">🧠 Predicted Letter: {{ prediction }}</div>
+  {% endif %}
+</form>
+
+</body>
+</html>
