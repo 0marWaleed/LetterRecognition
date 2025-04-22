@@ -1,8 +1,3 @@
-Thanks for pointing that out! Based on your GitHub repo at [0marWaleed/LetterRecognition](https://github.com/0marWaleed/LetterRecognition), here's the **correct file structure** and a fully updated **Markdown README** — ready to copy and paste:
-
----
-
-```markdown
 # 🧠 Letter Recognition using Machine Learning
 
 A machine learning project to classify handwritten capital letters (A–Z) based on 16 numerical features. The final model is deployed with **Streamlit**, **Flask**, and **Tkinter** interfaces.
@@ -110,4 +105,3 @@ This project is licensed under the MIT License.
 Feel free to fork, modify, and use it for educational or commercial purposes!
 
 ---
-```
